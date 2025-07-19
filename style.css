@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1eedd;
+    padding: 40px;
+}
+.logo {
+    width: 150px;
+}
+input, select, button {
+    margin: 10px;
+    padding: 10px;
+}
+.error {
+    color: red;
+}

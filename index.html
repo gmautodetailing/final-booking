@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GM Auto Detailing Booking</title>
+    <link href="/static/style.css" rel="stylesheet" />
+</head>
+<body>
+    <img src="/static/logo.png" alt="Logo" class="logo">
+    <h1>GM Auto Detailing Booking</h1>
+    <form method="POST">
+        <input name="name" placeholder="Full Name" required>
+        <input name="phone" placeholder="Phone Number" required>
+        <input name="postcode" placeholder="Postcode" required>
+        <select name="service" required>
+            <option disabled selected>--Select Service--</option>
+            <option>Exterior Detail</option>
+            <option>Interior Detail</option>
+            <option>Full Valet</option>
+        </select>
+        <input type="date" name="date" required>
+        <select name="time" required>
+            {% for hour in range(9, 21) %}
+                <option>{{ '%02d:00' % hour }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Book</button>
+    </form>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
